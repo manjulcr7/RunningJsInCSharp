@@ -26,10 +26,10 @@ The project uses the V8.Net library, which provides C# bindings for the V8 engin
 1. Creating the JavaScript Engine
 
    ```csharp
-   var engine = V8Engine.Create();
+   var engine = new V8ScriptEngine()
    ```
 
-   - We create an instance of the `V8Engine` class, which represents the JavaScript engine.
+   - We create an instance of the `V8ScriptEngine` class, which represents the JavaScript engine.
 
 2. Executing JavaScript Code
 
@@ -41,39 +41,25 @@ The project uses the V8.Net library, which provides C# bindings for the V8 engin
 
        add(2, 3);
    ";
-
-   var result = engine.Execute<int>(javascriptCode);
+   
+   var result = engine.Evaluate(javascriptCode);
    ```
 
    - Define your JavaScript code snippet as a string.
-   - Use the `Execute` method of the `V8Engine` class to execute the JavaScript code.
+   - Use the `Evaluate` method of the `V8Engine` class to execute the JavaScript code.
    - The result is retrieved using the `Execute` method, and in this example, it's cast to an `int`.
 
-3. Interacting with JavaScript from C#
-
-   You can pass data between C# and JavaScript by using the `engine.SetValue` method to expose C# objects and functions to the JavaScript environment, and by using the `engine.GetValue` method to access JavaScript variables and functions in C#.
-
-   ```csharp
-   engine.SetValue("myVariable", 42);
-   var myVariableValue = engine.GetValue<int>("myVariable");
-   ```
-
-   - Use `SetValue` to expose C# variables or functions to JavaScript.
-   - Use `GetValue` to retrieve JavaScript variables or function results in C#.
 
 ## Customization and Further Development
 
 - You can modify the JavaScript code in the `javascriptCode` variable to execute different JavaScript logic.
-- Explore the V8.Net library's documentation for more advanced features and functionalities.
+- Explore the Clearscript.V8 library's documentation for more advanced features and functionalities.
 - Extend the project to include additional C# and JavaScript integration scenarios.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-- The V8.Net library for providing the bindings to the V8 JavaScript engine.
+- The V8 library for providing the bindings to the V8 JavaScript engine.
 - The OpenAI GPT-3 model for assisting with generating this content.
 
 Feel free to customize this `README.md` file according to your project's specific needs and provide any additional information or instructions that might be relevant.
