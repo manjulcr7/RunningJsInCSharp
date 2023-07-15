@@ -1,5 +1,3 @@
-Certainly! Here's an example of a `README.md` file that explains the entire process of running JavaScript in C# using the V8 engine:
-
 # Running JavaScript in C# using V8 Engine
 
 This project demonstrates how to execute JavaScript code within a C# application using the V8 JavaScript engine. The V8 engine, developed by Google, is a high-performance JavaScript engine used in popular web browsers like Chrome.
